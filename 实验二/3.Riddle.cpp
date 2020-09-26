@@ -2,7 +2,8 @@
 #include<cstdio>
 using namespace std;
 int n=8;
-int Riddle(int *A)
+int A[]={8,2,5,4,5,8,7,3};
+int Riddle(int n)
 {
 	int temp;
 	if(n==1)
@@ -11,7 +12,7 @@ int Riddle(int *A)
 	{
 	for(int i=0;i<n-1;i++)
 	{
-		temp=A[i];
+		temp=Riddle(n-1);
 		if(temp<=A[n-1])
 		return temp;
 		else
@@ -22,8 +23,7 @@ int Riddle(int *A)
 
 int main()
 {
-int A[]={6,2,3,4,5,8,7,3};
-printf("%d",Riddle(A));
+printf("%d",Riddle(n));
 return 0;
 }
 
